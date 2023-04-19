@@ -11,6 +11,7 @@
 
 Elixir challenge done with 'Rocketseat' Ignite course. ("Desafio 05 - CRUD - Refeições diárias")
 
+# Desafio - CRUD - Refeições diárias
 ## 💻 Sobre o desafio
 
 Nesse desafio, você deverá criar uma aplicação para monitoramento de consumo de alimentos durante o dia.
@@ -24,3 +25,32 @@ O schema de uma refeição deverá possuir os seguintes campos:
 	data: data,
 	calorias: calorias
 }
+
+# Desafio - Testando a aplicação
+## 💻 Sobre o desafio
+
+Nesse desafio, você deverá criar outros testes com o objetivo de completar 100% na cobertura excoveralls. Para isso, utilize a lib do [excoveralls](https://github.com/parroty/excoveralls), adicione a dependência dele no seu mix.exs e essas configurações.
+
+def project do
+  [
+    app: :excoveralls,
+    version: "1.0.0",
+    elixir: "~> 1.0.0",
+    deps: deps(),
+    test_coverage: [tool: ExCoveralls],
+    preferred_cli_env: [
+      coveralls: :test,
+      "coveralls.detail": :test,
+      "coveralls.post": :test,
+      "coveralls.html": :test
+    ]
+    # if you want to use espec,
+    # test_coverage: [tool: ExCoveralls, test_task: "espec"]
+  ]
+end
+
+defp deps do
+  [
+    {:excoveralls, "~> 0.10", only: :test},
+  ]
+end
