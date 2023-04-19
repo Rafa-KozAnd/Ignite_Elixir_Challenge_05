@@ -1,3 +1,5 @@
 defmodule Exmeal.Error do
-# TO DO
+  @enforce_keys [:result, :status]
+
+  defstruct @enforce_keys
 end
